@@ -1,83 +1,56 @@
-# [1-11] LLMs Core (LLaMA 3, Mistral, Falcon, Qwen, Gemma, etc.)
+# Core Support
+numpy<2.0.0
+setuptools
+wheel
+
+# LLMs & Text [1-25]
 transformers>=4.40.0
 accelerate
 bitsandbytes
 einops
 sentencepiece
 protobuf
-
-# [12-17] Runtimes & Frameworks (vLLM, llama.cpp, GPT4All)
 vllm
 llama-cpp-python
 gpt4all
-ctransformers
 
-# [18-25] Code Gen (CodeLLaMA, StarCoder, DeepSeek)
-huggingface_hub
-peft
-trl
-
-# [26-40] Image Gen & Editing (SDXL, Kandinsky, ControlNet, GFPGAN)
+# Image & Video [26-46]
 diffusers
 opencv-python
 controlnet_aux
 gfpgan
 realesrgan
 safetensors
-invisible-watermark
-
-# [41-46] Video Gen (SVD, AnimateDiff, OpenSora)
 stable-diffusion-videos
-moviepy
-imageio-ffmpeg
 
-# [47-57] Audio & TTS (Coqui, Whisper, MusicGen, OpenVoice)
-TTS
+# Audio & TTS [47-57] (Modified for Compatibility)
+coqui-tts
 openai-whisper
 audiocraft
 librosa
 torchaudio
-soundfile
 
-# [58-65] Computer Vision & OCR (YOLO v8, MediaPipe, DeepFace, Tesseract)
+# Vision & OCR [58-65]
 ultralytics
 mediapipe
 deepface
 pytesseract
 easyocr
 
-# [66-71] Data Science (Torch, TensorFlow, Scikit-Learn, XGBoost, Pandas)
+# Data Science & Agents [66-80]
 torch
-torchvision
 tensorflow
 scikit-learn
 pandas
-numpy
-xgboost
-
-# [72-80] Agents & Multimodal (LangChain, LlamaIndex, CrewAI, CLIP, LLaVA)
 langchain
-langchain-community
 llama-index
 crewai
-clip-python
-open_clip_torch
 
-# [81-83] MLOps (MLflow, Airflow, n8n API)
+# Cyber & Advanced [81-102]
 mlflow
-prefect
-
-# [84-93] Cyber Security & OSINT (YARA, Scapy, SpiderFoot)
 yara-python
 scapy
 spiderfoot
-shodan
-
-# [94-96] Android & APK (TFLite, Frida, Androguard)
 frida-tools
 androguard
-
-# [97-102] Advanced Research (Ollama API, Fairseq, OpenCog)
 fairseq
-hydra-core
-omegaconf
