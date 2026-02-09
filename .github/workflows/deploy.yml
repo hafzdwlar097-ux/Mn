@@ -11,19 +11,18 @@ jobs:
         with:
           python-version: '3.10'
           
-      - name: Install Critical System Libraries
+      - name: Install System Dependencies
         run: |
           sudo apt-get update
-          # تثبيت ملفات تطوير الفيديو والصوت الضرورية لـ 102 أداة
-          sudo apt-get install -y ffmpeg \
-            libavcodec-dev libavformat-dev libavutil-dev \
-            libswscale-dev libavdevice-dev libavfilter-dev \
-            pkg-config libsndfile1 espeak-ng
+          sudo apt-get install -y ffmpeg libsndfile1 espeak-ng pkg-config
+          
+      - name: Install Pre-compiled Binaries
+        run: |
+          pip install --upgrade pip setuptools wheel
+          # تثبيت النسخة الجاهزة (binary) لتجنب أخطاء Cython
+          pip install --only-binary=:all: av
           
       - name: Install AETHER Arsenal
         run: |
-          pip install --upgrade pip
-          pip install --no-cache-dir setuptools wheel
-          # تثبيت av بشكل منفصل لضمان تخطي التعارض
-          pip install av==10.0.0 
+          # تثبيت بقية المكاتب مع تجاهل النسخ التي تطلب بناء من الصدر للمكتبات المسببة للمشاكل
           pip install --no-cache-dir -r requirements.txt
