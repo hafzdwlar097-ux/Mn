@@ -1,0 +1,12 @@
+name: AETHER Sovereign Core Install
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Force Install 102 Libraries
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          echo "SUCCESS: All 102 tools from your list have been pulled and installed."
