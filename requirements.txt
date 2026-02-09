@@ -1,10 +1,10 @@
-# Core Stability
+# [Core & Build]
 numpy<2.0.0
 setuptools
 wheel
 typing-extensions>=4.8.0
 
-# LLMs & Text [1-25]
+# [1-25] Text & LLMs
 transformers>=4.40.0
 accelerate
 bitsandbytes
@@ -15,7 +15,7 @@ vllm
 llama-cpp-python
 gpt4all
 
-# Image & Video [26-46]
+# [26-46] Creation & Video
 diffusers
 opencv-python
 controlnet_aux
@@ -24,21 +24,19 @@ realesrgan
 safetensors
 stable-diffusion-videos
 
-# Audio & TTS [47-57]
+# [47-57] Audio & TTS
 coqui-tts
 openai-whisper
 audiocraft
 librosa
 torchaudio
 
-# Vision & OCR [58-65]
+# [58-80] Vision & Intelligence
 ultralytics
 mediapipe
 deepface
 pytesseract
 easyocr
-
-# Data Science & Agents [66-80]
 torch
 tensorflow
 scikit-learn
@@ -47,7 +45,7 @@ langchain
 llama-index
 crewai
 
-# Cyber & Advanced [81-102]
+# [81-102] Cyber & MLOps
 mlflow
 yara-python
 scapy

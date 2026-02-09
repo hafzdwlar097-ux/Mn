@@ -9,15 +9,21 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # دي أهم خطوة لحل مشكلة TTS والـ 102 أداة
+          python-version: '3.10'
           
-      - name: Install System Dependencies
+      - name: Install Critical System Libraries
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg espeak-ng libsndfile1 espeak
+          # تثبيت ملفات تطوير الفيديو والصوت الضرورية لـ 102 أداة
+          sudo apt-get install -y ffmpeg \
+            libavcodec-dev libavformat-dev libavutil-dev \
+            libswscale-dev libavdevice-dev libavfilter-dev \
+            pkg-config libsndfile1 espeak-ng
           
-      - name: Force Install 102 Tools
+      - name: Install AETHER Arsenal
         run: |
           pip install --upgrade pip
           pip install --no-cache-dir setuptools wheel
+          # تثبيت av بشكل منفصل لضمان تخطي التعارض
+          pip install av==10.0.0 
           pip install --no-cache-dir -r requirements.txt
