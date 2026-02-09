@@ -11,16 +11,29 @@ jobs:
         with:
           python-version: '3.10'
           
-      - name: Install System Dependencies
+      - name: Install All Possible System Dev Libraries
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg libsndfile1 espeak-ng pkg-config \
-            libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
+          # تثبيت كل ما قد تحتاجه مكاتب الصوت والفيديو (القطع المفقودة)
+          sudo apt-get install -y \
+            ffmpeg \
+            pkg-config \
+            libavcodec-dev \
+            libavformat-dev \
+            libavutil-dev \
+            libswscale-dev \
+            libavdevice-dev \
+            libavfilter-dev \
+            libswresample-dev \
+            libsndfile1-dev \
+            libasound2-dev \
+            espeak-ng \
+            libportaudio2
           
       - name: Install AETHER Arsenal
         run: |
-          pip install --upgrade pip
-          # تثبيت av بشكل مستقل أولاً لضمان وجوده بنسخة حديثة
-          pip install --only-binary=:all: av
-          # تثبيت بقية المكاتب
+          pip install --upgrade pip setuptools wheel
+          # تثبيت Cython أولاً لمساعدة المكاتب التي تبني من المصدر
+          pip install Cython==0.29.36 
+          # تثبيت المكاتب
           pip install --no-cache-dir -r requirements.txt

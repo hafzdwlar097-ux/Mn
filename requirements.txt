@@ -1,10 +1,10 @@
-# [Core & Stability]
+# [Core]
 numpy<2.0.0
 typing-extensions>=4.8.0
 setuptools
 wheel
 
-# [1-25] Text & LLMs
+# [LLMs]
 transformers>=4.40.0
 accelerate
 bitsandbytes
@@ -15,7 +15,7 @@ vllm
 llama-cpp-python
 gpt4all
 
-# [26-46] Image & Video (تم إزالة المكتبة المسببة للتعارض)
+# [Vision & Video]
 diffusers
 opencv-python
 controlnet_aux
@@ -23,16 +23,12 @@ gfpgan
 realesrgan
 safetensors
 moviepy
-imageio[ffmpeg]
 
-# [47-57] Audio & TTS
+# [Audio & Intelligence]
 coqui-tts
 openai-whisper
-audiocraft
 librosa
 torchaudio
-
-# [58-80] Vision & Intelligence
 ultralytics
 mediapipe
 deepface
@@ -46,10 +42,12 @@ langchain
 llama-index
 crewai
 
-# [81-102] Cyber & MLOps
+# [Cyber & Final Tools]
 mlflow
 yara-python
 scapy
 frida-tools
 androguard
 fairseq
+# تترك للنهاية لأنها تطلب بناء خاص
+audiocraft 
