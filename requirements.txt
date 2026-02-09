@@ -1,7 +1,8 @@
-# Core Support
+# Core Stability
 numpy<2.0.0
 setuptools
 wheel
+typing-extensions>=4.8.0
 
 # LLMs & Text [1-25]
 transformers>=4.40.0
@@ -23,7 +24,7 @@ realesrgan
 safetensors
 stable-diffusion-videos
 
-# Audio & TTS [47-57] (Modified for Compatibility)
+# Audio & TTS [47-57]
 coqui-tts
 openai-whisper
 audiocraft
@@ -50,7 +51,6 @@ crewai
 mlflow
 yara-python
 scapy
-spiderfoot
 frida-tools
 androguard
 fairseq
