@@ -1,8 +1,10 @@
-# Core Support
+# [Core & Stability]
 numpy<2.0.0
 typing-extensions>=4.8.0
+setuptools
+wheel
 
-# LLMs & Text [1-25]
+# [1-25] Text & LLMs
 transformers>=4.40.0
 accelerate
 bitsandbytes
@@ -13,24 +15,24 @@ vllm
 llama-cpp-python
 gpt4all
 
-# Image & Video [26-46]
+# [26-46] Image & Video (تم إزالة المكتبة المسببة للتعارض)
 diffusers
 opencv-python
 controlnet_aux
 gfpgan
 realesrgan
 safetensors
-# سنعتمد على av المثبت مسبقاً في الـ workflow
-stable-diffusion-videos
+moviepy
+imageio[ffmpeg]
 
-# Audio & TTS [47-57]
+# [47-57] Audio & TTS
 coqui-tts
 openai-whisper
 audiocraft
 librosa
 torchaudio
 
-# Vision & Intelligence [58-80]
+# [58-80] Vision & Intelligence
 ultralytics
 mediapipe
 deepface
@@ -44,7 +46,7 @@ langchain
 llama-index
 crewai
 
-# Cyber & MLOps [81-102]
+# [81-102] Cyber & MLOps
 mlflow
 yara-python
 scapy

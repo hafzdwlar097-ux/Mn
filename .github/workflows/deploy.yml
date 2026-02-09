@@ -14,15 +14,13 @@ jobs:
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg libsndfile1 espeak-ng pkg-config
-          
-      - name: Install Pre-compiled Binaries
-        run: |
-          pip install --upgrade pip setuptools wheel
-          # تثبيت النسخة الجاهزة (binary) لتجنب أخطاء Cython
-          pip install --only-binary=:all: av
+          sudo apt-get install -y ffmpeg libsndfile1 espeak-ng pkg-config \
+            libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
           
       - name: Install AETHER Arsenal
         run: |
-          # تثبيت بقية المكاتب مع تجاهل النسخ التي تطلب بناء من الصدر للمكتبات المسببة للمشاكل
+          pip install --upgrade pip
+          # تثبيت av بشكل مستقل أولاً لضمان وجوده بنسخة حديثة
+          pip install --only-binary=:all: av
+          # تثبيت بقية المكاتب
           pip install --no-cache-dir -r requirements.txt
